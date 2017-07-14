@@ -36,7 +36,7 @@ body{
 }
 #drawing{
 	width: 100%;
-	height: 500px;
+	height: 450px;
 }
 #detail{
 	width: 98%;
@@ -64,4 +64,8 @@ body{
 	width: 20px;
 	height: 20px;
 	background: #dadada;
+}
+.resultTitle {
+    text-align: center;
+    margin: 10px;
 }
