@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<title>Convert Text to SVG</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/svg.js"></script>
+		<script type="text/javascript" src="js/softdev_svg.js"></script>
+		<script>
+			function getParam(){
+				var text = $("#text").val(),
+					color = $("#color").val(),
+					font = $("#font").val(),
+					size = $("#size").val(),
+					outline = $("#outline").val(),
+					shape = $("#shape").val(),
+					shapesize = $("#shapesize").val();
+				$('#drawing > svg').remove();
+				Curve(text,color,font,size,outline,shape,shapesize);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="container">
+				<div class="left">
+					<div id="drawing"></div>
+					<textarea id="detail"></textarea>
+				</div>
+				<div class="right">
+					<div class="option">
+						<form id="option_form">
+							<div class="group">
+								<label>Text</label>
+								<textarea name="text" id="text" onkeyup="getParam()"></textarea>
+							</div>
+							<div class="group">
+								<label>Color</label>
+								<input type="color" id="color">
+							</div>
+							<div class="group">
+								<label>Spacing</label>
+								<select name="spacing" id="spacing">
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+								</select>
+							</div>
+							<div class="group">
+								<label>Font</label>
+								<select name="font" id="font">
+									<option value="Time New Roman">Time New Roman</option>
+									<option value="Arial">Arial</option>
+								</select>
+							</div>
+							<div class="group">
+								<label>Size</label>
+								<select name="size" id="size">
+									<option value="10">10</option>
+									<option value="15">15</option>
+									<option value="20">20</option>
+									<option value="25">25</option>
+									<option value="30">30</option>
+									<option value="35">35</option>
+									<option value="40" selected>40</option>
+									<option value="45">45</option>
+									<option value="50">50</option>
+									<option value="55">55</option>
+									<option value="60">60</option>
+									<option value="65">65</option>
+									<option value="70">70</option>
+								</select>
+							</div>
+							<div class="group">
+								<label>Outline Size</label>
+								<select name="outline" id="outline">
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+								</select>
+							</div>
+							<div class="group">
+								<label>Text Shape</label>
+								<select name="shape" id="shape">
+									<option>CURVE</option>
+								</select>
+							</div>
+							<div class="group">
+								<label>Shape Size</label>
+								<select name="shapesize" id="shapesize">
+									<option value="-10">-10</option>
+									<option value="-9">-9</option>
+									<option value="-8">-8</option>
+									<option value="-7">-7</option>
+									<option value="-6">-6</option>
+									<option value="-5">-5</option>
+									<option value="-4">-4</option>
+									<option value="-3">-3</option>
+									<option value="-2">-2</option>
+									<option value="-1">-1</option>
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5" selected>5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$("#color,#spacing,#font,#size,#outline,#shape,#shapesize").change(function(){
+			var text = $("#text").val(),
+				color = $("#color").val(),
+				font = $("#font").val(),
+				size = $("#size").val(),
+				outline = $("#outline").val(),
+				shape = $("#shape").val(),
+				shapesize = $("#shapesize").val();
+			$('#drawing > svg').remove();
+			Curve(text,color,font,size,outline,shape,shapesize);
+		});
+		
+	</script>
+</html>
